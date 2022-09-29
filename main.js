@@ -3,26 +3,17 @@ addEventListener("DOMContentLoaded", (e) => {
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let mayor = 1;
-        let menor = 10;
-        let s = 0;
+        let men = 20;
+        let primer = 10;
 
-        let est = document.getElementById("num1").value;
-        for (i=1; i<=est; i++){
-            let cal = parseInt(prompt('alumno #'+i+'\ningrese su nota'))
+        //let est = document.getElementById("num1").value;
+        alert('el 1 mes el valor a pagar es:'+primer+ ' pesos');
+        for (i=2; i<=20; i++){
+            primer = primer * 2,
+            alert('el '+i+ ' mes el valor a pagar es de: '+primer+ ' pesos');
 
-            if (cal > 1 && cal < 10){
-                s = cal;
-            }
-            if(cal >= mayor){
-                mayor = cal;
-            }
-            else if(menor >= cal){
-                menor = cal
-            }
 		}
-        let prom = s / est;
-        alert('promedio de notas: '+prom+'\nnota mas alta: '+mayor+ '\nnota mas baja: '+menor);
+        
   
 
         //document.getElementById('res1').innerHTML = lista;
