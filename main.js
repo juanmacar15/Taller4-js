@@ -4,31 +4,18 @@ addEventListener("DOMContentLoaded", (e) => {
         e.preventDefault();
 
 
-        let ang = document.getElementById("num1").value;
-        let rad = document.getElementById("num2").value;
-        let signo = 1;
-        const pi = 3.14;
-        let x = rad*(180/pi);
-        let sen = x;
+        let cant = document.getElementById("num1").value;
 
-        for (i=3; i<=ang +1; i++){
+        for (i=1; i<=cant; i++){
+            let n1 = parseInt(prompt(i+'-'+cant+'\ningrese 1er numero:'));
+            let n2 = parseInt(prompt('ingrese 2do numero:'));
 
-            let a = 1;
-            let b = 1;
-
-            while(a <= i){
-                b = b * a;
-                a = a + 1;
-            }
-            if(signo % 2 == 1){
-                sen = sen - ((x * i) / b);
-            }
-            else{
-                sen = sen + ((x * i) / b);
-            }
-            signo += 1;
+            let suma = n1 + n2;
+            let resta = n1-n2;
+            let mul = n1 * n2;
+            let div = n1 / n2;
+            alert('suma: '+suma+ '\nresta: '+resta+ '\nmultiplicacion: '+mul+'\ndivision:'+div)
             
 		}
-        document.getElementById('res1').innerHTML= 'el seno de '+x+' es '+sen;
     })
 })
