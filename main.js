@@ -3,18 +3,28 @@ addEventListener("DOMContentLoaded", (e) => {
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let lista = [];
-        let n1 = document.getElementById("num1").value;
-        for (i=1; i<=n1; i++){
-			if (i%2!=0){
-				n2=i;
-			lista.push(n2+"");
-			}
-			else{
-				n2=i+3;
-				lista.push(n2+"");
-			}
+        let mayor = 1;
+        let menor = 10;
+        let s = 0;
+
+        let est = document.getElementById("num1").value;
+        for (i=1; i<=est; i++){
+            let cal = parseInt(prompt('alumno #'+i+'\ningrese su nota'))
+
+            if (cal > 1 && cal < 10){
+                s = cal;
+            }
+            if(cal >= mayor){
+                mayor = cal;
+            }
+            else if(menor >= cal){
+                menor = cal
+            }
 		}
-        document.getElementById('res1').innerHTML = lista;
+        let prom = s / est;
+        alert('promedio de notas: '+prom+'\nnota mas alta: '+mayor+ '\nnota mas baja: '+menor);
+  
+
+        //document.getElementById('res1').innerHTML = lista;
     })
 })
