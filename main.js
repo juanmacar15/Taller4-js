@@ -4,23 +4,31 @@ addEventListener("DOMContentLoaded", (e) => {
         e.preventDefault();
 
 
-        let nTrabajadores = document.getElementById("num1").value;
+        let ang = document.getElementById("num1").value;
+        let rad = document.getElementById("num2").value;
+        let signo = 1;
+        const pi = 3.14;
+        let x = rad*(180/pi);
+        let sen = x;
 
-        for (i=1; i<=nTrabajadores; i++){
-            let aT = parseInt(prompt('cuantos años lleva trabajando en la empresa?'));
-            
-            if( 1 <= aT && aT <= 5){
-                alert('su aumenro es de 100 pesos');
+        for (i=3; i<=ang +1; i++){
+
+            let a = 1;
+            let b = 1;
+
+            while(a <= i){
+                b = b * a;
+                a = a + 1;
             }
-            else if(5 < aT && aT <=10){
-                alert('su aumenro es de 250 pesos');
-            }
-            else if(10 < aT && aT <=20){
-                alert('su aumenro es de 400 pesos');
+            if(signo % 2 == 1){
+                sen = sen - ((x * i) / b);
             }
             else{
-                alert('su aumenro es de 500 pesos');
+                sen = sen + ((x * i) / b);
             }
-		}        
+            signo += 1;
+            
+		}
+        document.getElementById('res1').innerHTML= 'el seno de '+x+' es '+sen;
     })
 })
